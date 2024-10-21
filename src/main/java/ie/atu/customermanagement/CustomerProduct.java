@@ -1,5 +1,6 @@
 package ie.atu.customermanagement;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -26,7 +27,7 @@ public class CustomerProduct {
     @NotBlank(message = "Last name must not be empty")
     private String lastname;
 
-    @NotBlank(message = "Email must be valid")
+    @Email(regexp = "^.+@.+$", groups = Create.class)
     private String email;
 
     @Min(value = 9, message = "Phone number not long enough")
