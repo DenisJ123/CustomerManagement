@@ -7,12 +7,16 @@ public class CustomerService {
     private CustomerRepository customerRepository;
     public CustomerService(CustomerRepository customerRepository)
     {
-        this.customerRepository = customerRepository
+        this.customerRepository = customerRepository;
     }
 
-    public List<Customer>add(Customer customer)
+    public List<CustomerProduct>add(CustomerProduct customerProduct)
     {
-        customerRepository.save(Customer)
-                final.Customer customer;
+        customerRepository.save(CustomerProduct);
+                final.Customer;
+    }
+
+    public String update(long id) {
+        return null;
     }
 }

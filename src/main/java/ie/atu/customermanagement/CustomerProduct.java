@@ -6,11 +6,14 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.web.WebProperties;
+import org.springframework.data.annotation.Id;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Validated
 public class CustomerProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,10 +21,10 @@ public class CustomerProduct {
     private Long id;
 
     @NotBlank(message = "First name must not be empty")
-    private String fname;
+    private String firstname;
 
     @NotBlank(message = "Last name must not be empty")
-    private String lname;
+    private String lastname;
 
     @NotBlank(message = "Email must be valid")
     private String email;
@@ -30,8 +33,11 @@ public class CustomerProduct {
     @Max(value = 10, message = "Phone number too long")
     private int phoneNumber;
 
-    @Min(value = 2006, message = "Customer too young")
-    @Max(value = 2025, message = "That birthdate is in the future")
+    @Max(value = 2006, message = "Customer too young")
     private int dob;
+
+
+
+
 
 }

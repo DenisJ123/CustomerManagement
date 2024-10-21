@@ -27,4 +27,10 @@ public class CustomerController {
         customerList = customerService.add(customers);
                 return ResponseEntity.ok(customerList);
     }
+
+    @PostMapping("/updateCustomers/{id}")
+    public String updateCustomers(@PathVariable long id, @RequestBody CustomerProduct customerProduct)
+    {
+        return customerService.update(id);
+    }
 }
