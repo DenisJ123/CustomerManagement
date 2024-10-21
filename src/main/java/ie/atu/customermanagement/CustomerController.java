@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/Customer")
-public class Controller {
+public class CustomerController {
     private List<Customer> customerList = new ArrayList<>();
     private CustomerService customerService;
     {
